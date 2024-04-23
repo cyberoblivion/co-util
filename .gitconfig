@@ -1,0 +1,24 @@
+[user]
+	name = Ben Erridge
+	email = bene@cyberoblivion.com
+[alias]
+	f = fetch --all
+	cher = cherry-pick
+	r = remote -v
+	s = status
+	com = commit
+	co = checkout
+	br = branch
+	out = log --pretty=oneline --abbrev-commit --graph @{u}..
+	in = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+	ap = apply --ignore-space-change --ignore-whitespace
+	
+[core]
+	editor = emacs
+	autocrl = true
+[merge]
+	tool = kdiff3
+[diff]
+	tool = kdiff3
+[init]
+	defaultBranch = master
