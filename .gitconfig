@@ -1,6 +1,6 @@
 [user]
 	name = Ben Erridge
-	email = bene@cyberoblivion.com
+	email = ben.erridge@tylertech.com
 [alias]
 	f = fetch --all
 	cher = cherry-pick
@@ -12,6 +12,7 @@
 	out = log --pretty=oneline --abbrev-commit --graph @{u}..
 	in = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
 	ap = apply --ignore-space-change --ignore-whitespace
+	branchup = "!f() { git checkout -b \"$1\" && git push -u origin \"$1\"; }; f"
 	
 [core]
 	editor = emacs
