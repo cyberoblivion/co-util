@@ -16,6 +16,7 @@
 	
 [core]
 	editor = emacs
+	excludesFile = ~/.config/git/ignore
 	autocrl = true
 [merge]
 	tool = kdiff3

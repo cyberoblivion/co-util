@@ -11,6 +11,12 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
+# Personal utility scripts
+if ! [[ ":$PATH:" == *":$HOME/dev/utils/bin:"* ]]; then
+    PATH="$PATH:$HOME/dev/utils/bin"
+fi
+export PATH
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -36,6 +42,7 @@ GIT_PROMPT_THEME=Solarized_UserHost
 export MAVEN_OPTS="-Xmx1G -XX:MaxPermSize=512M"
 export USER_MEM_ARGS="-Xmx4G"
 alias gopro='cd ~/dev/projects'
+alias goutil='cd ~/dev/utils'
 
 source ~/dev/projects/bash-git-prompt/gitprompt.sh
 alias winbox='sudo wine /home/ben/dev/utils/winbox64.exe'

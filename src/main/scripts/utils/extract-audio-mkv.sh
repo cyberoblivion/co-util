@@ -17,10 +17,13 @@ fi
 # Create the output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-# Loop through all .mkv files in the input directory
-for video in "$INPUT_DIR"/*.mkv; do
+# Skip patterns that match no files
+shopt -s nullglob nocaseglob
+
+# Loop through all .mkv and .mp4 files in the input directory
+for video in "$INPUT_DIR"/*.mkv "$INPUT_DIR"/*.mp4; do
     # Extract the filename without extension
-    filename=$(basename "$video" .mkv)
+    filename=$(basename "${video%.*}")
     
     # Define the output audio file name
     output_audio="$OUTPUT_DIR/${filename}.mp3"
